@@ -60,7 +60,7 @@ idadepessoas(pedro, lucas);
 
 //EXERCICIOS 
 
-
+/*
 class carros {
     marca;
     cor;
@@ -83,3 +83,44 @@ class carros {
 const celta = new carros('chev' , 'branco' , 1/12);
 
 console.log(celta.calcularGastos(70, 5));
+*/
+
+class pessoa {
+    nome;
+    peso;
+    altura;
+
+    constructor(nome,peso,altura){
+        this.nome = nome;
+        this.peso = peso;
+        this.altura = altura;
+    }
+
+    calclarIMC(){
+       return this.peso / (this.altura * this.altura);
+    }
+
+    classificacaoIMC(){
+        const imc = this.calclarIMC();
+
+        if(imc > 18){
+            return ('Abaixo do peso');
+        }else if (imc >= 18.5 && imc < 25 ){
+             return ('Peso Normal');
+        }else if (imc >= 25 && imc < 30 ){
+            return ('Acima do peso');
+        }else if (imc >= 30 && imc < 40 ){
+            return ('Obesa');
+        }else {
+            return ('Obsedidade Grave');
+        }
+
+    }
+}
+
+const jose = new pessoa("jose",80 , 1.75);
+
+console.log(jose.calclarIMC());
+console.log(jose.classificacaoIMC());
+
+
